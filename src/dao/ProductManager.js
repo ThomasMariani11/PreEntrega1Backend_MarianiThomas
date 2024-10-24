@@ -35,16 +35,21 @@ export class ProductManager{
         await this.#grabaArchivos(JSON.stringify(products, null, '\t'))
         return nuevoProduct
     }
-    // static async modifyProduct(cambios, pid){
-    //     let products = await ProductManager.getProducts()
-    //     let productoAnterior = products[pid - 1]
-    //     products[pid - 1] = {cambios}
-    //     products.push()
-    //     await this.#grabaArchivos(JSON.stringify(products, null, '\t'))
-    //     return productoEliminado
+    static async modifyProduct(titulo,descripcion,codigo,precio,stock,categoria, pid){
+        let products = await ProductManager.getProducts()
+        let productoAnterior = products[pid - 1]
+        productoAnterior.status = true
+        productoAnterior.titulo = titulo
+        productoAnterior.descripcion = descripcion
+        productoAnterior.codigo = codigo
+        productoAnterior.precio = precio
+        productoAnterior.stock = stock
+        productoAnterior.categoria = categoria
+        await this.#grabaArchivos(JSON.stringify(products, null, '\t'))
+        return productoAnterior
 
         
-    // }
+    }
     static async deleteProducts(pid){
         let products = await ProductManager.getProducts()
         let productoEliminado = products[pid - 1]

@@ -1,30 +1,35 @@
 [
 	{
 		"id": 1,
-		"titulo": "Remera 01",
+		"titulo": "remera 01221",
 		"imagen": "/img/remeras/img1.jpg",
-		"categoria": "Remeras",
-		"precio": 10000,
-		"descripcion": "Remera Manga Corta Blanca | Temporada Verano 2024",
-		"stock": 15
+		"categoria": "remera",
+		"precio": "10000",
+		"descripcion": "remera temporada 2024",
+		"stock": "12",
+		"codigo": "rem01"
 	},
 	{
 		"id": 2,
-		"titulo": "Remera 02",
+		"titulo": "remera 01221",
 		"imagen": "/img/remeras/img2.jpg",
-		"categoria": "Remeras",
-		"precio": 11000,
-		"descripcion": "Remera Manga Corta Negra | Temporada Verano 2024",
-		"stock": 15
+		"categoria": "remera",
+		"precio": 10000,
+		"descripcion": "remera temporada 2024",
+		"stock": 12,
+		"codigo": "rem01",
+		"status": true
 	},
 	{
 		"id": 3,
-		"titulo": "Remera 03",
+		"titulo": "remera 01221",
 		"imagen": "/img/remeras/img3.jpg",
-		"categoria": "Remeras",
-		"precio": 12000,
-		"descripcion": "Remera Manga Corta Negra | Temporada Verano 2024",
-		"stock": 15
+		"categoria": "remera",
+		"precio": 10000,
+		"descripcion": "remera temporada 2024",
+		"stock": 12,
+		"status": true,
+		"codigo": "rem01"
 	},
 	{
 		"id": 4,
