@@ -16,7 +16,7 @@ export class ProductManager{
     }
     static async #grabaArchivos(datos=''){
         if(typeof datos != 'string'){
-            throw new Error('error metodo de grabadi - argumento invalido')
+            throw new Error('error metodo de grabado - argumento invalido')
         }
         await fs.promises.writeFile(this.#path, datos)
     }
