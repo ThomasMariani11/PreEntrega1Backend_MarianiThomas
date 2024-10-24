@@ -142,38 +142,5 @@
 		"stock": "12",
 		"categoria": "remera",
 		"img": "./img1"
-	},
-	{
-		"id": 17,
-		"status": true,
-		"titulo": "remera 01211",
-		"descripcion": "remera temporada 2024",
-		"codigo": "rem01",
-		"precio": "1000",
-		"stock": 1000,
-		"categoria": "remera",
-		"img": "./img1"
-	},
-	{
-		"id": 18,
-		"status": true,
-		"titulo": "remera 012111",
-		"descripcion": "remera temporada 2024",
-		"codigo": "rem01",
-		"precio": 1000,
-		"stock": null,
-		"categoria": "remera",
-		"img": "./img1"
-	},
-	{
-		"id": 19,
-		"status": true,
-		"titulo": "remera 0121111",
-		"descripcion": "remera temporada 2024",
-		"codigo": "rem01",
-		"precio": 1000,
-		"stock": 12,
-		"categoria": "remera",
-		"img": "./img1"
 	}
 ]

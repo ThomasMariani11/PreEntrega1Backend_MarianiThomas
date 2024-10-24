@@ -30,8 +30,8 @@ router.get('/', async (req, res) => {
     }
     respuesta = respuesta.slice(skip, limit + skip)
 
-    res.status(200).send(respuesta)
     res.setHeader('Content-type','text/plain')
+    res.status(200).send(respuesta)
 })
 
 
@@ -83,22 +83,47 @@ router.post('/', async (req, res) => {
         
     }
 })
-router.put('/:pid', async (req, res) => {
-    let products = await ProductManager.getProducts()
-
-    let {pid,...cambio} = req.params
-    pid = Number(pid)
-
-    if(isNaN(pid)){
-        return res.status(400).send('error, el id debe ser numerico')
-    }
-    let product = products.find( p => p.id === pid)
-    if(!product){
-        return res.status(404).send(`no existe el producto con id ${pid}`)
-    }
+// router.put('/:pid', async (req, res) => {
+//     try{    
+//         let {pid} = req.params
+//         let {...cambios} = req.body
+//         pid = Number(pid)
     
+//         if(isNaN(pid)){
+//             return res.status(400).send('error, el id debe ser numerico')
+//         }
+//         let product = products.find( p => p.id === pid)
+//         if(!product){
+//             return res.status(404).send(`no existe el producto con id ${pid}`)
+//         }
+//         productoAModificar = ProductManager.modifyProduct(...cambios,pid)
+        
+        
+    
+//         res.status(200).send({products, productoModificado:productoAnterior })
+//     }catch(error){
+//         procesaErrores(res, error)
+//     }
 
 
-    res.status(200).send(product)
+
+// })
+router.delete('/:pid', async (req, res) => {
+    let {pid} = req.params
+    pid = Number(pid)
+    if(isNaN(pid)){
+        res.setHeader('Content-Type','aplication/json')
+        return res.status(400).json({error:'pos debe ser numerico'})
+    }
+    try{
+        let productoEliminado = await ProductManager.deleteProducts(pid)
+        res.setHeader('Conten-Type','application/json')
+        return res.status(200).send({productoEliminado})
+
+    }catch(error){
+        procesaErrores(res, error)
+    }
+
+
 
 })
