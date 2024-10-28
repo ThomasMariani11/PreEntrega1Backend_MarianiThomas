@@ -1,5 +1,6 @@
 import fs from 'fs'
-
+import { ProductManager } from './ProductManager.js'
+import { error, log } from 'console'
 
 export class CartManager{
     static #path = ''
@@ -34,5 +35,21 @@ export class CartManager{
         carts.push(nuevoCart)
         await this.#grabaArchivos(JSON.stringify(carts, null, '\t'))
         return nuevoCart
+    }
+    static async addProductCart(cid,pid){
+        let carts = await this.getCarts()
+        let cart = carts[cid - 1]
+        let quantity = 1
+
+        
+        let productAddCart = {
+            pid:pid,
+            quantity
+        }
+
+
+        cart.products.push(productAddCart)
+        await this.#grabaArchivos(JSON.stringify(carts, null, '\t'))
+        return productAddCart
     }
 }

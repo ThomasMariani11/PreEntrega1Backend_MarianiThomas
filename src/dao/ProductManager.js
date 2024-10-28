@@ -25,6 +25,7 @@ export class ProductManager{
         let id = 1
         if(products.length > 0){
             id = Math.max(...products.map(d => d.id)) + 1
+            console.log(id)
         }
         let nuevoProduct = {
             id,

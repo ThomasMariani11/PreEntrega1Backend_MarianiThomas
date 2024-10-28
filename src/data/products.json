@@ -147,5 +147,15 @@
 		"stock": "12",
 		"categoria": "remera",
 		"img": "./img1"
+	},
+	{
+		"id": 17,
+		"status": true,
+		"titulo": "remerads",
+		"descripcion": "dksfjmk",
+		"codigo": "d,f",
+		"precio": 1000,
+		"stock": 15,
+		"categoria": "remera"
 	}
 ]

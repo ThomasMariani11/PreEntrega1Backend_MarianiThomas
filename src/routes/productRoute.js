@@ -67,7 +67,6 @@ router.post('/', async (req, res) => {
         let products = await ProductManager.getProducts()
         let existe = products.find(p => p.titulo  === titulo)
         if(existe){
-            console.log(existe) 
             res.setHeader('Content-Type','aplication/json')
             return res.status(400).json({error:'ya existe el producto'})
         }else{
